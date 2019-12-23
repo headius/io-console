@@ -1,15 +1,13 @@
 # -*- ruby -*-
 _VERSION = IO.popen(%W[git -C #{__dir__} describe --tags --match v[0-9]*], &:read)[/\Av?(\d+(?:\.\d+)*)/, 1]
-date = %w$Date::                           $[1]
 
 Gem::Specification.new do |s|
   s.name = "io-console"
   s.version = _VERSION
-  s.date = date
   s.summary = "Console interface"
   s.email = "nobu@ruby-lang.org"
   s.description = "add console capabilities to IO instances."
-  s.required_ruby_version = ">= 2.2.0"
+  s.required_ruby_version = ">= 2.4.0"
   s.homepage = "https://github.com/ruby/io-console"
   s.metadata["source_code_url"] = s.homepage
   s.authors = ["Nobu Nakada"]
